@@ -167,10 +167,50 @@ db.product_details.find({});
   product_material: 'Concrete',
   product_color: 'lime'
 }
+{
+  _id: ObjectId("64a6dce2b197d7c49105f936"),
+  id: '21',
+  product_name: 'Unbranded Granite Chicken',
+  product_price: 90,
+  product_material: 'Metal',
+  product_color: 'gold'
+}
+{
+  _id: ObjectId("64a6dce2b197d7c49105f937"),
+  id: '22',
+  product_name: 'Ergonomic Soft Hat',
+  product_price: 99,
+  product_material: 'Rubber',
+  product_color: 'black'
+}
+{
+  _id: ObjectId("64a6dce2b197d7c49105f938"),
+  id: '23',
+  product_name: 'Intelligent Steel Pizza',
+  product_price: 95,
+  product_material: 'Cotton',
+  product_color: 'azure'
+}
+{
+  _id: ObjectId("64a6dce2b197d7c49105f939"),
+  id: '24',
+  product_name: 'Tasty Rubber Cheese',
+  product_price: 47,
+  product_material: 'Frozen',
+  product_color: 'orchid'
+}
+{
+  _id: ObjectId("64a6dce2b197d7c49105f93a"),
+  id: '25',
+  product_name: 'Licensed Steel Car',
+  product_price: 20,
+  product_material: 'Cotton',
+  product_color: 'indigo'
+}
 
 2.Find the product price which are between 400 to 800
 
-db.product_details.find({$and:[{product_price:{$gt:400}},{product_price:{$lte:800}}]});
+db.product_details.find({$and:[{product_price:{$gt:400}},{product_price:{$lt:800}}]});
 
 {
   _id: ObjectId("64a6dce2b197d7c49105f922"),
@@ -215,7 +255,7 @@ db.product_details.find({$and:[{product_price:{$gt:400}},{product_price:{$lte:80
 
 3.Find the product price which are not between 400 to 600
 
-db.product_details.find({ $not: [{ product_price: { $lt: 400 } }, { product_price: { $gt: 600 } }],});
+db.product_details.find({ $not: [{ product_price: { $gt: 400 } }, { product_price: { $lt: 600 } }],});
 
 {
   _id: ObjectId("64a6dce2b197d7c49105f922"),
